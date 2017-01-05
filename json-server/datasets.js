@@ -11,7 +11,7 @@ module.exports = function () {
         datasets.push({
             name: 'Dataset ' + (i + 1),
             description: faker.lorem.paragraph(),
-            id: faker.random.uuid(),
+            id: 'dataset' + i,
             lastUpdated: faker.date.past(),
             type: types[Math.floor(Math.random() * 3)],
             access: {
