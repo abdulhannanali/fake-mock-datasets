@@ -17,7 +17,8 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(jsonServer.defaults())
 
-app.use(cache.route(), jsonRouter)
+app.get(cache.route(), jsonRouter)
+app.use(jsonRouter)
 
 app.listen(process.env.PORT || 3000, process.env.HOST || '0.0.0.0', function (error) {
     if (!error) {
