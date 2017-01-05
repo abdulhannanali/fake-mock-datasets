@@ -28,6 +28,7 @@ module.exports = function () {
     }
 
     const datasetsResults = generateDatasetsResults(datasets)
+
     const datasetsList = datasets.map(function (dataset) {
         return {
             id: dataset.id,
@@ -47,11 +48,12 @@ module.exports = function () {
 function generateDatasetsResults (datasets) {
     return flatten(datasets.map(function (dataset) {
         const results = generateDatasetResults(dataset.id)
+        dataset['resultsSize'] = results.length
         return results
     }))
 }
 
-function generateDatasetResults (datasetId, resultsLength = 1000) {
+function generateDatasetResults (datasetId, minResults = 200, maxResults = 10000) {
     const fields = [
         'transactionId',
         'quantity',
@@ -59,6 +61,8 @@ function generateDatasetResults (datasetId, resultsLength = 1000) {
         'skuCode'
     ]
 
+    const resultsLength = minResults + Math.ceil(Math.random() * (maxResults - minResults))
+    console.log(resultsLength)
     const results = []
     for (var i = 0; i < resultsLength; i++) {
         let resultObj = {
