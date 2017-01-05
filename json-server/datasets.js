@@ -4,8 +4,8 @@ const flatten = require('lodash.flatten')
 module.exports = function () {
     const datasets = []
     const results = []
-    const types = ['returns', 'margin', 'campain']
-    const datasetsLength = 20
+    const types = ['returns', 'margin', 'campaign']
+    const datasetsLength = 30
     
     for (var i = 0; i < datasetsLength; i++) {
         datasets.push({
