@@ -7,9 +7,9 @@ module.exports = function () {
     const types = ['returns', 'margin', 'campaign']
     const datasetsLength = 30
     
-    for (var i = 0; i < datasetsLength; i++) {
+    for (var i = 1; i <= datasetsLength; i++) {
         datasets.push({
-            name: 'Dataset ' + (i + 1),
+            name: 'Dataset ' + i,
             description: faker.lorem.paragraph(),
             id: 'dataset' + i,
             lastUpdated: faker.date.past(),
