@@ -13,9 +13,11 @@
   "dependencies": {
     "apicache": "^0.7.4",
     "express": "^4.14.0",
+    "express-redis-cache": "^0.5.0",
     "faker": "^3.1.0",
     "json-server": "^0.9.4",
     "lodash": "^4.17.4",
-    "lodash.flatten": "^4.4.0"
+    "lodash.flatten": "^4.4.0",
+    "redis": "^2.6.3"
   }
 }
