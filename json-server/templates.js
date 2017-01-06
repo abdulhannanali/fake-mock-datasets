@@ -8,14 +8,27 @@
 // Initial Templates Configuration in order to make it look better looking
 const faker = require('faker')
 module.exports = function () {
+
+    const dataTypes = {
+        'STRING': 'STRING',
+        'BYTES': 'BYTES',
+        'INTEGER': 'INTEGER',
+        'FLOAT': 'FLOAT',
+        'BOOLEAN': 'BOOLEAN',
+        'RECORD': 'RECORD',
+        'TIMESTAMP': 'TIMESTAMP',
+        'DATE': 'DATE',
+        'TIME': 'TIME',
+        'DATETIME': 'DATETIME'
+    }
+
     const fieldsData = {
-        transactionId: 'id',
-        userId: 'id',
-        skuCode: 'string',
-        quantity: 'number',
-        date: 'number',
-        userId: 'string',
-        email: 'string'
+        transactionId: dataTypes.INTEGER,
+        userId: dataTypes.INTEGER,
+        skuCode: dataTypes.STRING,
+        quantity: dataTypes.INTEGER,
+        date: dataTypes.DATE,
+        email: dataTypes.STRING
     }
 
     const templates = {
@@ -63,5 +76,8 @@ module.exports = function () {
         return templates
     }
 
-    return (generateTemplates(templates))
+    return {
+        templates: (generateTemplates(templates)),
+        types: dataTypes
+    }
 }
