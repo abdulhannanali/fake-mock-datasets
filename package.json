@@ -18,6 +18,7 @@
     "json-server": "^0.9.4",
     "lodash": "^4.17.4",
     "lodash.flatten": "^4.4.0",
+    "multer": "^1.2.1",
     "redis": "^2.6.3"
   }
 }
