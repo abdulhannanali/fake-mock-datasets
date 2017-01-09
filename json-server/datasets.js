@@ -66,7 +66,8 @@ function generateDatasetResults (datasetId, minResults = 200, maxResults = 10000
     const results = []
     for (var i = 0; i < resultsLength; i++) {
         let resultObj = {
-            datasetId
+            datasetId,
+            arrayIndex: i
         }
 
         fields.forEach(function (field) {
