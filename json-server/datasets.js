@@ -4,7 +4,7 @@ const flatten = require('lodash.flatten')
 module.exports = function () {
     const datasets = []
     const results = []
-    const types = ['returns', 'margin', 'campaign']
+    const schemaNames = ["productReturns", "productProfitabilityMargin", "campaignInteractions", "productRecommendations"]
     const datasetsLength = 30
     
     for (var i = 1; i <= datasetsLength; i++) {
@@ -13,7 +13,7 @@ module.exports = function () {
             description: faker.lorem.paragraph(),
             id: 'dataset' + i,
             lastUpdated: faker.date.past(),
-            type: types[Math.floor(Math.random() * 3)],
+            schema_name: schemaNames[Math.floor(Math.random() * 3)],
             access: {
                 lookup: {
                     endpoint: 'stash.qubitproducts.com',
@@ -34,7 +34,7 @@ module.exports = function () {
             id: dataset.id,
             name: dataset.name,
             lastUpdated: dataset.lastUpdated,
-            type: dataset.type
+            schema_name: dataset.schema_name
         }
     })
 
@@ -77,7 +77,7 @@ function generateDatasetResults (datasetId, minResults = 200, maxResults = 10000
                     fieldVal = faker.random.number()
                     break;
                 case 'quantity':
-                    fieldVal = Math.floor(Math.random() * 5)
+                    fieldVal = Math.floor(Math.random() * 5) + 1
                     break;
                 case 'skuCode':
                     fieldVal = 'AJ' + Math.floor(Math.random() * 50)

@@ -8,7 +8,6 @@
 // Initial Templates Configuration in order to make it look better looking
 const faker = require('faker')
 module.exports = function () {
-
     const dataTypes = {
         'STRING': 'STRING',
         'BYTES': 'BYTES',
