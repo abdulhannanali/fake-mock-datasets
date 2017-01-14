@@ -16,12 +16,12 @@ module.exports = function () {
             schema_name: schemaNames[Math.floor(Math.random() * 3)],
             access: {
                 lookup: {
-                    endpoint: 'stash.qubitproducts.com',
-                    namespace: 'halloweencostumes'
+                    endpoint: faker.random.word().toLowerCase() + '.blahblah.com',
+                    namespace: 'verysecretandawesomestuff'
                 },
                 liveTap: {
-                    project: 'qubit-client-halloweencostumes',
-                    table: 'halloweencostumes.returnsData'
+                    project: 'a-very-secret-one',
+                    table: 'verysecretandawesomestuff.returnsData'
                 }
             }
         })
